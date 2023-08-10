@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+<Dialog id="idAddUserDialog" title="{i18n>addNew}">
+<content>
+<f:SimpleForm id="idAddUserForm" editable="true" >
+    <f:content>
+        <Label id="idAddLabelUsername" text="{i18n>username}" labelFor="idAddInputUsername"/>
+        <Input id="idAddInputUsername" value="{createData>/Uname}" required="true"/>
+        <Label id="idAddCBUsername" text="{i18n>cbUserID}" labelFor="idAddInputCBUsername"/>
+        <Input id="idAddInputCBUsername" value="{createData>/CBUser}" required="true"/>
+        <Label id="idAddLabelCompany" text="{i18n>company}" labelFor="idAddInputCompany"/>
+        <Input id="idAddInputCompany" value="{createData>/Company}" required="true"/>
+        <Label id="idAddLabelPlanningScreen" text="{i18n>planningScreen}" labelFor="idAddInputPlanningScreen"/>
+        <Input id="idAddInputPlanningScreen" value="{createData>/PlanningScreen}" required="true"/>
+        <Label id="idAddLabelAccess" text="{i18n>accessType}" labelFor="idAddSelectAccessType"/>
+        <Select id="idAddSelectAccessType" items="{accessTypeModel>/results}" required="true">
+			<core:Item key="{accessTypeModel>text}" text="{accessTypeModel>text}" />
+		</Select>
+        <Label id="idAddLabelStatus" text="{i18n>status}" labelFor="idAddSelectStatus"/>
+        <Select id="idAddSelectStatus" items="{status>/results}" required="true">
+			<core:Item key="{status>key}" text="{status>text}" />
+		</Select>
+    </f:content>
+</f:SimpleForm>
+</content>
+<beginButton>
+    <Button id="idSubmit" type="Emphasized" press="onUserDetailsSubmit" text="{i18n>submit}"/>
+</beginButton>
+<endButton>
+    <Button id="idCancel" press="onUserDetailsCancel" text="{i18n>cancel}"/>
+</endButton>
+</Dialog>
+</core:FragmentDefinition>

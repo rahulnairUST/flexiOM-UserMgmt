@@ -1,0 +1,53 @@
+<mvc:View controllerName="com.alloc.user.mgmt.allocusermgmt.controller.UserMgmt"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <Table id="idUserMgmtTable" mode="SingleSelectLeft" inset="false" items="{tableData>/results}" selectionChange="onSelectionChange">
+            <headerToolbar>
+                    <OverflowToolbar id="idOV1Toolbar">
+                        <content>
+                            <ToolbarSpacer />
+                            <Button id="idCreateNew" text="{i18n>addNew}" icon="sap-icon://add" press="onAddPress" tooltip="{i18n>addNew}"/>
+                            <Button id="idEdit" text="{i18n>edit}" icon="sap-icon://edit" press="onEditPress" tooltip="{i18n>edit}"/>
+                            <Button id="idDelete" text="{i18n>delete}" icon="sap-icon://delete" press="onDeletePress" tooltip="{i18n>delete}"/>
+                            <Button id="idExcelDownload" text="{i18n>download}" tooltip="{i18n>download}" visible="false" icon="sap-icon://download" press="onExport"/>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+            <columns>
+                <Column width="auto">
+                    <Text text="{i18n>username}" />
+                </Column>
+                <Column width="auto">
+                    <Text text="{i18n>cbUserID}" />
+                </Column>
+                <Column width="auto">
+                    <Text text="{i18n>company}" />
+                </Column>
+                <Column width="auto">
+                    <Text text="{i18n>planningScreen}" />
+                </Column>
+                <Column width="auto">
+                    <Text text="{i18n>accessType}" />
+                </Column>
+                <Column width="auto">
+                    <Text text="{i18n>status}" />
+                </Column>
+		    </columns>
+            <items>
+			<ColumnListItem id="idUserMgmtList" press="onUserItemPressed">
+				<cells>
+					<ObjectIdentifier title="{tableData>Uname}"/>
+                    <Text text="{tableData>CBUser}" />
+					<Text text="{tableData>Company}" />
+					<Text text="{tableData>PlanningScreen}" />
+                    <Text text="{tableData>AcessType}" />
+                    <Text text="{path: 'tableData>Status', formatter: '.formatter.activeStatus'}"/>					
+				</cells>
+			</ColumnListItem>
+		</items>
+        </Table>
+        </content>
+    </Page>
+</mvc:View>
