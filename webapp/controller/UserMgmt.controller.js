@@ -191,7 +191,7 @@ sap.ui.define([
                     "CBUser": oDetails.CBUser
                 };
                 var oModel = this.getOwnerComponent().getModel();
-                oModel.update("/UserMngmnt(Uname='" + oDetails.Uname + "')", updateJSON, {
+                oModel.update("/UserMngmnt(Uname='" + oDetails.Uname + "',PlanningScreen='" + oDetails.PlanningScreen + "')", updateJSON, {
                     success: function (oData, response) {
                         var msg = 'User ' + oDetails.Uname + ' modified successfully';
                         sap.m.MessageToast.show(msg);
@@ -216,7 +216,8 @@ sap.ui.define([
                 if (oItem) {
                     var oEntry = oItem.getBindingContext("tableData").getObject();
                     var oModel = this.getOwnerComponent().getModel();
-                    oModel.remove("/UserMngmnt(Uname='" + oEntry.Uname + "')", {
+                    debugger;
+                    oModel.remove("/UserMngmnt(Uname='" + oEntry.Uname + "',PlanningScreen='" +oEntry.PlanningScreen + "')", {
                         success: function (oData, response) {
                             var msg = 'User ' + oEntry.Uname + ' deleted successfully';
                             sap.m.MessageToast.show(msg);

@@ -6,11 +6,11 @@
         <Label id="idEditLabelUsername" text="{i18n>username}" labelFor="idInputUsername"/>
         <Text id="idEditInputUsername" text="{editUserData>/Uname}"/>
         <Label id="idEditLabelCBUsername" text="{i18n>cbUserID}" labelFor="idEditInputCBUsername"/>
-        <Input id="idEditInputCBUsername" value="{editUserData>/CBUser}"/>
+        <Text id="idEditInputCBUsername" text="{editUserData>/CBUser}"/>
         <Label id="idEditLabelCompany" text="{i18n>company}" labelFor="idInputCompany"/>
         <Input id="idEditInputCompany" value="{editUserData>/Company}" required="true"/>
         <Label id="idEditLabelPlanningScreen" text="{i18n>planningScreen}" labelFor="idInputPlanningScreen"/>
-        <Input id="idEditInputPlanningScreen" value="{editUserData>/PlanningScreen}" required="true"/>
+        <Text id="idEditInputPlanningScreen" text="{editUserData>/PlanningScreen}"/>
         <Label id="idEditLabelAccessType" text="{i18n>accessType}" labelFor="idEditSelectAccessType"/>
         <Select id="idEditSelectAccessType" items="{accessTypeModel>/results}" required="true">
 			<core:Item key="{accessTypeModel>text}" text="{accessTypeModel>text}" />
