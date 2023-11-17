@@ -1,7 +1,7 @@
 <mvc:View controllerName="com.alloc.user.mgmt.allocusermgmt.controller.UserMgmt"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    <Page id="page">
         <content>
         <Table id="idUserMgmtTable" mode="SingleSelectLeft" inset="false" items="{tableData>/results}" selectionChange="onSelectionChange">
             <headerToolbar>

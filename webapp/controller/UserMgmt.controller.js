@@ -28,6 +28,8 @@ sap.ui.define([
                         "text": "CHNG"
                     }, {
                         "text": "FULL"
+                    }, {
+                        "text": "ADMN"
                     }]
                 };
                 var oModel = new JSONModel();
@@ -35,7 +37,7 @@ sap.ui.define([
                 this.getView().setModel(oModel, "accessTypeModel");
             },
 
-            _createStatusModel: function() {
+            _createStatusModel: function () {
                 var statusJSON = {
                     "results": [{
                         "key": true,
@@ -217,7 +219,7 @@ sap.ui.define([
                     var oEntry = oItem.getBindingContext("tableData").getObject();
                     var oModel = this.getOwnerComponent().getModel();
                     debugger;
-                    oModel.remove("/UserMngmnt(Uname='" + oEntry.Uname + "',PlanningScreen='" +oEntry.PlanningScreen + "')", {
+                    oModel.remove("/UserMngmnt(Uname='" + oEntry.Uname + "',PlanningScreen='" + oEntry.PlanningScreen + "')", {
                         success: function (oData, response) {
                             var msg = 'User ' + oEntry.Uname + ' deleted successfully';
                             sap.m.MessageToast.show(msg);
